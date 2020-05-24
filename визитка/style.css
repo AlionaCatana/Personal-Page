@@ -1,0 +1,150 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat/Montserrat.eot");
+  src: local("☺"), url("fonts/Montserrat/Montserrat.woff") format("woff"), url("fonts/Montserrat/Montserrat.ttf") format("truetype"), url("fonts/Montserrat/Montserrat.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat bold";
+  src: url("fonts/montserrat_bold/montserrat_bold.eot");
+  src: local("☺"), url("fonts/montserrat_bold/montserrat_bold.woff") format("woff"), url("fonts/montserrat_bold/montserrat_bold.ttf") format("truetype"), url("fonts/montserrat_bold/montserrat_bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-family: "Montserrat";
+  color: white;
+  background-image: url(francesca-tosolini-tHkJAMcO3QE-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-areas: ". . ." ". a ." ". . .";
+}
+body a {
+  text-decoration: none;
+  color: white;
+}
+body .box {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  width: 1000px;
+  height: 600px;
+  grid-area: a;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 4fr/1fr 1fr 1fr 4fr;
+}
+body .box .avatar {
+  background-color: #BBB5A9;
+  grid-row: 1/span 3;
+  grid-column: 1/span 3;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 0.5em solid #BBB5A9;
+}
+body .box .avatar img {
+  width: 105%;
+  object-fit: cover;
+}
+body .box .info {
+  background-color: #7D6F5E;
+  grid-row: 2/span 4;
+  grid-column: 2/span 4;
+  opacity: 0.7;
+  border: 0.5em solid #705C45;
+  display: grid;
+  grid-template-areas: "no       no      no" "about   about  about" "about   about  about" "about   about  about" "a        a      a" "footer footer footer";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+}
+body .box .info .about {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: about;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 1em;
+}
+body .box .info .about h1 {
+  font-family: "montserrat bold";
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: -2em;
+  padding-bottom: 0.5em;
+}
+body .box .info .about h2 {
+  font-size: 0.8em;
+  margin-top: -2em;
+}
+body .box .info .about p {
+  text-align: center;
+  line-height: 1.2em;
+}
+body .box .info > a {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  margin: auto;
+  width: 14em;
+  height: 1.5em;
+  padding: 1em 1em;
+  grid-area: a;
+  font-size: 0.9em;
+  border: 3px solid #3F4238;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+body .box .info > a:hover {
+  background-color: #3F4238;
+}
+body .box .info .footer {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  padding: 1em;
+  font-size: 0.9em;
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body .box .icons a {
+  padding: 0.5em;
+}
+
+@media screen and (max-width: 1920px) and (min-width: 860px) {
+  body .box {
+    width: 1000px;
+    height: 600px;
+  }
+  body .box .avatar {
+    height: 400px;
+  }
+  body .box .info .about {
+    align-items: center;
+    padding-left: 20vmax;
+  }
+  body .box .info > a {
+    margin-left: 20vmax;
+  }
+}
+@media screen and (max-width: 460px) {
+  body {
+    font-size: 0.8em;
+  }
+
+  .info .about p {
+    line-height: 0.8em;
+  }
+}
